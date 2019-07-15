@@ -8,6 +8,35 @@
   margin: auto;
   padding: 10px;
   }
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+ 
+.tab button.active {
+  background-color: #ccc;
+}
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  }
+  
 </style>
 
 <title>Jacob Official</title>
@@ -16,24 +45,45 @@
     <h1> The Official Website of JACOB NGUYEN </h1>
  <hr />
 <!-- tabs -->
+<div>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Biography')">Biography</button>
+  <button class="tablinks" onclick="openTab(event, 'Education')">Education</button>
+  <button class="tablinks" onclick="openTab(event, 'Project/Portfolio')">Project/Portfolio</button>
+</div>
 
-  <div class="enhanceable_content tabs">
-    <ul>
-      <li> a href ="#one"> Biography</a></li>
-      <li> a href ="#two"> Education</a></li>
-      <li> a href ="#three"> Projects/Porfolio</a></li>
-    </ul>
-  <div id="one"> 
-    <body>
-      <p> This is where my bio will go. </p></div>
-  <div id="two">
-    <body> 
-      <p> This is where I will list my education degress and certificate. </p></div>
-  <div id="three">
-    <body>
-      <p> This is where I will showcase my projects and experience. </p></div>
-  </div>
+<!-- Tab content -->
+<div id="Biography" class="tabcontent">
+  <h3>Biography</h3>
+  <p>I will put my bio here.</p>
+</div>
 
+<div id="Education" class="tabcontent">
+  <h3>Education</h3>
+  <p>List education and certificate.</p>
+</div>
+
+<div id="Projects" class="tabcontent">
+  <h3>Projects</h3>
+  <p>Upload projects and portfolios. Will include pictures, videos, and code.</p>
+</div>
+  
+<script>
+function openTab(evt, topic) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++){
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</div>
 <hr />  
 <!-- seperate tabs and constant content -->
  
